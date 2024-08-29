@@ -1,0 +1,31 @@
+---
+const Menu = [
+{
+  name: "trabajos",
+  url: "/trabajos"
+},
+{
+  name: "nosotros",
+  url: "/nosotros"
+},
+{
+  name: "SombreroNegro",
+  url: "/"
+},
+{
+  name: "contactos",
+  url: "/contacto"
+
+},
+{
+  name: "galería",
+  url: "/galeria"
+}]
+
+---
+
+<nav>
+  <ul class="flex items-center w-full bg-red-200 justify-evenly gap-5 mt-7 font-normal max-w-screen-2xl mx-auto ">
+    {Menu.map((item) => <li><a href={item.url} class="text-decoration-none uppercase text-base" >{item.name}</a></li>)}
+  </ul>
+</nav>
