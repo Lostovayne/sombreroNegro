@@ -24,8 +24,8 @@ const Menu = [
 
 ---
 
-<nav>
-  <ul class="flex items-center w-full bg-red-200 justify-evenly gap-5 mt-7 font-normal max-w-screen-2xl mx-auto ">
+<nav class="w-full py-8 hidden lg:block" >
+  <ul class="flex items-center w-full justify-evenly gap-5  font-semibold max-w-screen-2xl mx-auto ">
     {Menu.map((item) => <li><a href={item.url} class="text-decoration-none uppercase text-base" >{item.name}</a></li>)}
   </ul>
 </nav>

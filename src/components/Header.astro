@@ -1,32 +1,64 @@
 ---
 import { Image } from "astro:assets";
 import Slider1 from "@/images/slider/slider1.webp";
+import Slider2 from "@/images/slider/slider2.webp";
+import Slider3 from "@/images/slider/slider3.webp";
+import Slider4 from "@/images/slider/slider4.webp";
 
 ---
 
-<div class="swiper w-full h-96" >
-  <div class="swiper-wrapper w-full">
-    <div class="swiper-slide">
-      <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/>
-    </div>
-    <div class="swiper-slide">
-      <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/>
-    </div>
-    <div class="swiper-slide">
-      <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/>
-    </div>
-  </div>
-  <div class="swiper-pagination"></div>
+    
+<div class="content" >
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true"  space-between="30"
+    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <swiper-slide> 
+      <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+    </swiper-slide>
+    <swiper-slide>
+      <Image src={Slider2} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+    </swiper-slide>
+    <swiper-slide>
+      <Image src={Slider3} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+    </swiper-slide>
+    <swiper-slide>
+      <Image src={Slider4} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+    </swiper-slide>
+  </swiper-container>
 </div>
 
+<style>
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script is:inline>new Swiper('.swiper',  {
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    })</script>
+  .content {
+    position: relative;
+    height: 32rem;
+
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+
+</style>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
