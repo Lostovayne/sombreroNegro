@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from "astro:content";
+
+interface Props {
+    project: CollectionEntry<"projects">
+}
+
+export const getStaticPaths = ( async () => {
+    const projects = await getCollection('projects');
+    return projects.map((project) => (
+        {
+            params: { slug: project.id },
+            props: { project: project }
+        }
+    ))
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params;
+const {project} = Astro.props;
+
+// tomar la data dinamica de los proyectos
+const {data} = project
+
+---
+
+<Layout title={data.title} >
+    <section class="mx-auto max-w-screen-2xl" >
+        <div class="w-96 h-auto " >
+            <Image src={data.image} alt={data.title} width={500} height={500}
+            transition:name={`${project.id}}-image`}
+            class="object-cover size-full " />
+        </div>
+    </section>
+</Layout>

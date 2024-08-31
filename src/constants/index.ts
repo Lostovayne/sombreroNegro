@@ -8,12 +8,12 @@ export const Menu = [
     url: "/nosotros",
   },
   {
-    name: "SombreroNegro",
+    name: "Sombrero Negro",
     url: "/",
   },
   {
     name: "contactos",
-    url: "/contacto",
+    url: "/contactos",
   },
   {
     name: "Proyectos",
