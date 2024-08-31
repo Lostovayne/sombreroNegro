@@ -1,35 +1,32 @@
 ---
 import { Image } from "astro:assets";
-import gallery1 from "@/images/gallery/gallery1.webp"
-import gallery2 from "@/images/gallery/gallery2.webp"
-import gallery3 from "@/images/gallery/gallery3.webp"
-import gallery4 from "@/images/gallery/gallery4.webp"
-import gallery5 from "@/images/gallery/gallery5.webp"
-import gallery6 from "@/images/gallery/gallery6.webp"
-import gallery7 from "@/images/gallery/gallery7.webp"
+import type { CollectionEntry } from "astro:content";
+// import Logo from "@/images/logo/sombrero_bajada.svg";  
 
+interface Props {
+  projects: CollectionEntry<"projects">[]
+}
 
+const { projects } = Astro.props;
+const dataProject = projects.map((project) => {
+  return project.data
+})
 
-
-
+console.log(dataProject)
 ---
 
-
-<section class="grid grid-cols-3 gap-5 grid-rows-2 h-[50rem] my-16" >
-
-  <div class="col-span-1 row-span-1" >
-    <Image src={gallery1} alt={"Imagen 1 de la galeria"} class={"w-full h-full object-cover object-top"}/>
+<section class="flex flex-col items-center max-w-screen-2xl mx-auto lg:px-16 my-10" >
+  <div>
+    <Image src={dataProject[0].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+  </div>
+  <div>
+    <Image src={dataProject[1].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+  </div>
+  <div>
+    <Image src={dataProject[2].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
   </div>
 
-  <div class="col-span-2 row-span-1" >
-    <Image src={gallery2} alt={"Imagen 2 de la galeria"} class={"w-full h-full object-cover object-top"}/>
-  </div>
-  <div class="col-span-2 row-span-1" >
-    <Image src={gallery6} alt={"Imagen 2 de la galeria"} class={"w-full h-full object-cover object-top"}/>
-  </div>
-  <div class="col-span-1 row-span-1" >
-    <Image src={gallery7} alt={"Imagen 1 de la galeria"} class={"w-full h-full object-fill object-top"}/>
-  </div>
-
+  <!-- <img src={Logo.src} alt=""> -->
 </section>
+
 

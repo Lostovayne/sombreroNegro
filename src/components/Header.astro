@@ -9,7 +9,7 @@ import Slider4 from "@/images/slider/slider4.webp";
 
     
 <div class="content" >
-    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true"  space-between="30"
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="10"
     centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
     <swiper-slide> 
       <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
@@ -54,9 +54,15 @@ import Slider4 from "@/images/slider/slider4.webp";
     height: 100%;
     object-fit: cover;
   }
+ :root {
+   --swiper-pagination-color: rgba(255, 255, 255, 0.5);
+   --swiper-pagination-bullet-inactive-color: #ffffff;
+   --swiper-pagination-bullet-inactive-opacity: 1;
+   --swiper-pagination-bullet-size: 10px;
+   --swiper-pagination-bullet-horizontal-gap: 6px;
+   --swiper-pagination-bottom: 20px;
 
-  
-
+ }
 </style>
 
 
