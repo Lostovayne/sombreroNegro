@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-// import Logo from "@/images/logo/sombrero_bajada.svg";  
+import type { CollectionEntry } from "astro:content"; 
 
 interface Props {
   projects: CollectionEntry<"projects">[]
@@ -12,21 +11,67 @@ const dataProject = projects.map((project) => {
   return project.data
 })
 
-console.log(dataProject)
 ---
 
 <section class="flex flex-col items-center max-w-screen-2xl mx-auto lg:px-16 my-10" >
   <div>
-    <Image src={dataProject[0].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
-  </div>
-  <div>
-    <Image src={dataProject[1].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
-  </div>
-  <div>
-    <Image src={dataProject[2].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+    <a href={`proyectos/${projects[0].id}`}  >
+      <Image src={dataProject[0].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[0].id}}-image`}
+      />
+    </a>
   </div>
 
-  <!-- <img src={Logo.src} alt=""> -->
+  <div>
+    <a href={`proyectos/${projects[1].id}`}  >
+      <Image src={dataProject[1].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[1].id}}-image`}
+      />
+    </a>
+  </div>
+
+  <div>
+    <a href={`proyectos/${projects[2].id}`}  >
+      <Image src={dataProject[2].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[2].id}}-image`}
+      />
+    </a>
+  </div>
+
+  <div>
+    <a href={`proyectos/${projects[3].id}`}  >
+      <Image src={dataProject[3].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[3].id}}-image`}
+      />
+    </a>
+  </div>
+
+  <div>
+    <a href={`proyectos/${projects[4].id}`}  >
+      <Image src={dataProject[4].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[4].id}}-image`}
+      />
+    </a>
+  </div>
+
+
+  <div>
+    <a href={`proyectos/${projects[5].id}`}  >
+      <Image src={dataProject[5].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[5].id}}-image`}
+      />
+    </a>
+  </div>
+
+
+  <div>
+    <a href={`proyectos/${projects[6].id}`}  >
+      <Image src={dataProject[6].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
+      transition:name={`${projects[6].id}}-image`}
+      />
+    </a>
+  </div>
+
 </section>
 
 

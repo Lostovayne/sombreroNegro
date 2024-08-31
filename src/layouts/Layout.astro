@@ -1,6 +1,8 @@
 ---
 import Footer from '@/components/Footer.astro';
+import NavbarMobile from '@/components/Navbar-Mobile.astro';
 import Navbar from '@/components/Navbar.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -22,14 +24,25 @@ const { title } = Astro.props;
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 	/>
+	<ViewTransitions />
 	</head>
+
 	<body>
+		<NavbarMobile />
 		<Navbar />
 		<slot />
 		<Footer />
 	</body>
 </html>
 <style is:global>
+
+:root {
+	--gray-light: 229, 233, 240;
+	--gray-dark: 34, 41, 57;
+	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+}
+
+
 
 @font-face {
 font-family:"capitana";
@@ -73,9 +86,14 @@ src:url("https://use.typekit.net/af/7c49b3/00000000000000007735f342/30/l?subset_
 font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
 }
 
-html {
+body {
 	font-family: 'capitana', sans-serif;
 	background-color: #fff;
+	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background-size: contain;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: rgb(var(--gray-dark));
 }
 
 
