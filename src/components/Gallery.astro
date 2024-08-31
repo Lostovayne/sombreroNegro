@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+// import Logo from "@/images/logo/sombrero_bajada.svg";  
 
 interface Props {
   projects: CollectionEntry<"projects">[]
@@ -24,6 +25,8 @@ console.log(dataProject)
   <div>
     <Image src={dataProject[2].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
   </div>
+
+  <!-- <img src={Logo.src} alt=""> -->
 </section>
 
 
