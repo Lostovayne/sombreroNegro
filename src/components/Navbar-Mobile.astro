@@ -1,0 +1,17 @@
+---
+// import { Menu } from "@/constants";
+import Logo from "@/images/logo/modified.svg"
+import menuOpen from "@/images/icons/menu-Open.svg"
+import menuClose from "@/images/icons/menu-Close.svg"
+---
+
+<nav class="w-full px-5 py-3 flex justify-between lg:hidden">
+   <a href="/">
+      <img src={Logo.src} class="w-10" alt="logo">
+   </a>
+   <span class="flex items-center">
+      <img src={menuOpen.src} class="w-10" alt="icono de menu">
+      <img src={menuClose.src} class="w-10 hidden" alt="icono de menu">
+   </span>
+
+</nav>
