@@ -3,12 +3,20 @@ import Gallery from '@/components/Gallery.astro';
 import Header from '@/components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Link from '@/components/Link.astro';
+import { getCollection } from 'astro:content';
+
+// tomar la data dinamica de los proyectos
+// retornar solo 7 proyectos
+const projects = await getCollection('projects');
+
+
+
 ---
 
 <Layout title="Estudio de diseño | Sombrero Negro">
 	<Header />
 	<main class="flex flex-col items-center max-w-screen-2xl mx-auto lg:px-16" >
-		<Gallery />
+		<Gallery projects={projects} />
 		<Link />
 	</main>
 </Layout>
