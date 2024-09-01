@@ -1,17 +1,74 @@
 ---
-// import { Menu } from "@/constants";
-import Logo from "@/images/logo/modified.svg"
-import menuOpen from "@/images/icons/menu-Open.svg"
-import menuClose from "@/images/icons/menu-Close.svg"
+import HeaderLink from "@/components/HeaderLink.astro";
+import {MenuMobile} from "@/constants";
+import menuOpen from "@/images/icons/menu-Open.svg";
+import menuClose from "@/images/icons/menu-Close.svg";
 ---
 
-<nav class="w-full px-5 py-3 flex justify-between lg:hidden">
+ <nav class="bg-white flex justify-between py-5 px-7 md:hidden">
    <a href="/">
-      <img src={Logo.src} class="w-10" alt="logo">
+      <h1 class="text-2xl">Logo</h1>
    </a>
-   <span class="flex items-center">
-      <img src={menuOpen.src} class="w-10" alt="icono de menu">
-      <img src={menuClose.src} class="w-10 hidden" alt="icono de menu">
-   </span>
+    <button id="mobile-menu-open">
+         <img src={menuOpen.src} class="w-6" alt="icono para abrir el menu">
+    </button>
 
+    <section
+      id="mobile-menu"
+     class="fixed top-0 left-0 z-10 w-full h-full transition-all bg-black/40">
+      <div id="menu-links" class="flex flex-col bg-white w-[75%] h-full drop-shadow-2xl">
+         <div class="flex justify-end px-7 py-5">
+            <button id="mobile-menu-close">
+               <img src={menuClose.src} class="w-6" alt="icono para cerrar el menu">        
+            </button>
+         </div>
+       
+        <ul class="unset flex flex-col text-text-bold gap-4 [&>li]:p-0 px-6">
+
+          {MenuMobile.map((item) =>
+            <li>
+              <HeaderLink class="capitalize menu-link" href={item.url} >{item.name}</HeaderLink>
+            </li>)
+          } 
+        </ul>
+      </div>
+    </section>
 </nav>
+
+
+<script>
+  // @ts-nocheck
+
+  // abrir menu
+  document.querySelector("#mobile-menu-open").addEventListener("click", () => {
+    const menu = document.querySelector("#mobile-menu");
+    menu.classList.remove("left-[-100%]");
+    menu.classList.add("left-0");
+
+  });
+  // cerrar menu
+  document.querySelector("#mobile-menu-close").addEventListener("click", () => {
+    const menu = document.querySelector("#mobile-menu");
+    menu.classList.remove("left-0");
+    menu.classList.add("left-[-100%]");
+  });
+
+  // cerrar menu si clickeas afuera
+  document.querySelector("#mobile-menu").addEventListener("click", (e) => {
+  if (!e.target.closest("#menu-links")) {
+    document.querySelector("#mobile-menu").classList.remove("left-0");
+    document.querySelector("#mobile-menu").classList.add("left-[-100%]");
+  }
+
+  // TODO: Quitar menu cuando clickeas en un link
+//   document.querySelectorAll(".menu-link").forEach((link) => {
+//   link.addEventListener("click", () => {
+//    alert("link clickeado");
+//     const menu = document.querySelector("#mobile-menu");
+//     menu.classList.remove("left-0");
+//     menu.classList.add("left-[-100%]");
+//   });
+// });
+});
+</script>
+
