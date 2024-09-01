@@ -13,8 +13,8 @@ const dataProject = projects.map((project) => {
 
 ---
 
-<section class="flex flex-col items-center max-w-screen-2xl mx-auto lg:px-16 my-10" >
-  <div>
+<section class=" grid grid-cols-4 grid-rows-4 max-w-screen-2xl mx-auto lg:px-16 my-10 gap-4 " >
+  <div class="col-span-2 row-span-2 hover:shadow-xl transition-all hover:scale-[0.98] " >
     <a href={`proyectos/${projects[0].id}`}  >
       <Image src={dataProject[0].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[0].id}}-image`}
@@ -22,7 +22,7 @@ const dataProject = projects.map((project) => {
     </a>
   </div>
 
-  <div>
+  <div class="hover:shadow-2xl transition-all hover:scale-[0.98]  " >
     <a href={`proyectos/${projects[1].id}`}  >
       <Image src={dataProject[1].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[1].id}}-image`}
@@ -30,7 +30,7 @@ const dataProject = projects.map((project) => {
     </a>
   </div>
 
-  <div>
+  <div class="hover:shadow-2xl transition-all hover:scale-[0.98] ">
     <a href={`proyectos/${projects[2].id}`}  >
       <Image src={dataProject[2].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[2].id}}-image`}
@@ -38,7 +38,7 @@ const dataProject = projects.map((project) => {
     </a>
   </div>
 
-  <div>
+  <div class="hover:shadow-2xl transition-all hover:scale-[0.98] ">
     <a href={`proyectos/${projects[3].id}`}  >
       <Image src={dataProject[3].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[3].id}}-image`}
@@ -46,7 +46,7 @@ const dataProject = projects.map((project) => {
     </a>
   </div>
 
-  <div>
+  <div class="hover:shadow-2xl transition-all hover:scale-[0.98] ">
     <a href={`proyectos/${projects[4].id}`}  >
       <Image src={dataProject[4].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[4].id}}-image`}
@@ -55,7 +55,7 @@ const dataProject = projects.map((project) => {
   </div>
 
 
-  <div>
+  <div class="col-span-2 row-span-2 hover:shadow-2xl transition-all hover:scale-[0.98] " >
     <a href={`proyectos/${projects[5].id}`}  >
       <Image src={dataProject[5].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[5].id}}-image`}
@@ -64,7 +64,7 @@ const dataProject = projects.map((project) => {
   </div>
 
 
-  <div>
+  <div class="col-span-2 row-span-2 hover:shadow-2xl transition-all hover:scale-[0.98] ">
     <a href={`proyectos/${projects[6].id}`}  >
       <Image src={dataProject[6].image} alt={"slider1"} class={"w-full h-full object-cover object-top"}
       transition:name={`${projects[6].id}}-image`}

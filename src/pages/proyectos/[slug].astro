@@ -19,7 +19,7 @@ export const getStaticPaths = ( async () => {
     ))
 }) satisfies GetStaticPaths;
 
-const { slug } = Astro.params;
+// const { slug } = Astro.params;
 const {project} = Astro.props;
 
 // tomar la data dinamica de los proyectos
@@ -28,11 +28,53 @@ const {data} = project
 ---
 
 <Layout title={data.title} >
-    <section class="mx-auto max-w-screen-2xl" >
-        <div class="w-96 h-auto " >
-            <Image src={data.image} alt={data.title} width={500} height={500}
+    <section class="mx-auto max-w-screen-2xl grid grid-cols-4 grid-rows-4 mt-10 gap-6 p-4 max-h-[140vh]" >
+        <div class="col-span-2 row-span-1" >
+            <Image src={data.image} alt={data.title} 
+            loading="lazy"
+            format="webp"
+            quality={100}
             transition:name={`${project.id}}-image`}
-            class="object-cover size-full " />
+            class="object-cover size-full" />
         </div>
+        <div class="col-span-2 row-span-1  " >
+            <Image src={data.image} alt={data.title} 
+            loading="lazy"
+            format="webp"
+            quality={100}
+            class="object-cover size-full" />
+        </div>
+        <div class="col-span-4 row-span-1  " >
+            <Image src={data.image} alt={data.title} 
+            loading="lazy"
+            format="webp"
+            quality={100}
+            class="object-cover size-full" />
+        </div>
+
+        <div class="col-span-2 row-span-2 " >
+            <Image src={data.image} alt={data.title} 
+            loading="lazy"
+            format="webp"
+            quality={100}
+            class="object-cover size-full" />
+        </div>
+
+        <div class="col-span-2 row-span-1  " >
+            <Image src={data.image} alt={data.title} 
+            loading="lazy"
+            format="webp"
+            quality={100}
+            class="object-cover size-full" />
+        </div>
+   
+        <div class="col-span-2 row-span-1 " >
+            <Image src={data.image} alt={data.title} 
+            loading="lazy"
+            format="webp"
+            quality={100}
+            class="object-cover size-full" />
+        </div>
+
     </section>
 </Layout>

@@ -3,7 +3,7 @@ import { Menu } from "@/constants"
 ---
 
 <nav class="w-full py-6 hidden  lg:block shadow-md bg-white" >
-  <ul class="flex items-center w-full justify-evenly gap-5  font-normal max-w-screen-2xl mx-auto ">
+  <ul class="flex items-center w-full justify-center gap-6  font-normal max-w-screen-2xl mx-auto ">
     {Menu.map((item) => <li><a href={item.url} class="text-decoration-none uppercase text-sm" >{item.name}</a></li>)}
   </ul>
 </nav>
