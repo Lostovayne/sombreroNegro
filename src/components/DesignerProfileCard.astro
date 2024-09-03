@@ -1,0 +1,14 @@
+---
+import Image from "astro/components/Image.astro";
+const { fullName, description, image = "https://via.placeholder.com/320x256" } = Astro.props
+---
+
+ <div class="w-80 text-white">
+    <div class="w-80 h-64 bg-gray-200" >
+          <Image src={image} class="size-full object-cover" width={320} height={256}  alt="imagen de una persona del equipo de disenadores"/>     
+    </div>
+    <div class="w-full flex flex-col items-start pl-4 pt-2">
+       <span class="text-lg font-normal">{fullName}</span>
+       <span class="text-sm font-light">{description}</span>
+   </div>
+</div>

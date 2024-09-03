@@ -1,0 +1,19 @@
+---
+import DesignerProfileCard from "@/components/DesignerProfileCard.astro";
+import {designerData} from "@/data/index"
+---
+
+ {Object.values(designerData.designTeams).map((team) => (
+        <div class="flex flex-col xl:flex-row gap-x-5 gap-y-8">
+          {team.designers.map((designer) => (
+            <DesignerProfileCard
+              fullName={designer.fullName}
+              description={designer.description}
+              image={designer.image}
+            />
+          ))}
+          <div class="w-80 xl:w-52">
+            <p class="text-white text-balance">{team.teamDescription}</p>
+          </div>
+        </div>
+      ))}

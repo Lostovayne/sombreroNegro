@@ -1,0 +1,18 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionTitle from "@/components/sectionTitle.astro";
+import DesignerCardsRenderer from "@/components/DesignerCardsRenderer.astro";
+---
+
+
+<Layout title="Nosotros" >
+   <section class="mx-auto max-w-screen-2xl" >
+      <SectionTitle title="Diseñadores del estudio" subtitle="titulo principal portadas"/>
+      <div class="w-full h-72">
+         <img class="size-full object-cover object-center" src="https://cdn.artandobject.com/sites/default/files/styles/gallery_item/public/davincivitruvelucviatour-edited.jpg?itok=4Eu82Kyn" alt="">
+      </div>
+      <main class="w-full flex flex-col md:flex-row xl:flex-col md:justify-center items-center gap-20 bg-gray-950 px-7 py-20">
+        <DesignerCardsRenderer/>
+      </main>
+    </section>
+</Layout>

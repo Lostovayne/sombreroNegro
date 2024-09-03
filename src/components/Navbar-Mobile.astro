@@ -15,7 +15,7 @@ import menuClose from "@/images/icons/menu-Close.svg";
 
     <section
       id="mobile-menu"
-     class="fixed top-0 left-0 z-10 w-full h-full transition-all bg-black/40">
+     class="fixed top-0 left-0 -translate-x-full z-10 w-full h-full transition-all bg-black/40">
       <div id="menu-links" class="flex flex-col bg-white w-[75%] h-full drop-shadow-2xl">
          <div class="flex justify-end px-7 py-5">
             <button id="mobile-menu-close">
@@ -42,33 +42,23 @@ import menuClose from "@/images/icons/menu-Close.svg";
   // abrir menu
   document.querySelector("#mobile-menu-open").addEventListener("click", () => {
     const menu = document.querySelector("#mobile-menu");
-    menu.classList.remove("left-[-100%]");
-    menu.classList.add("left-0");
+    menu.classList.remove("-translate-x-full");
+    menu.classList.add("translate-x-0");
 
   });
   // cerrar menu
   document.querySelector("#mobile-menu-close").addEventListener("click", () => {
     const menu = document.querySelector("#mobile-menu");
-    menu.classList.remove("left-0");
-    menu.classList.add("left-[-100%]");
+    menu.classList.remove("translate-x-0");
+    menu.classList.add("-translate-x-full");
   });
 
   // cerrar menu si clickeas afuera
   document.querySelector("#mobile-menu").addEventListener("click", (e) => {
   if (!e.target.closest("#menu-links")) {
-    document.querySelector("#mobile-menu").classList.remove("left-0");
-    document.querySelector("#mobile-menu").classList.add("left-[-100%]");
+    document.querySelector("#mobile-menu").classList.remove("translate-x-0");
+    document.querySelector("#mobile-menu").classList.add("-translate-x-full");
   }
-
-  // TODO: Quitar menu cuando clickeas en un link
-//   document.querySelectorAll(".menu-link").forEach((link) => {
-//   link.addEventListener("click", () => {
-//    alert("link clickeado");
-//     const menu = document.querySelector("#mobile-menu");
-//     menu.classList.remove("left-0");
-//     menu.classList.add("left-[-100%]");
-//   });
-// });
 });
 </script>
 
