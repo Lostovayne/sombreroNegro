@@ -11,8 +11,10 @@ import DesignerCardsRenderer from "@/components/DesignerCardsRenderer.astro";
       <div class="w-full h-72">
          <img class="size-full object-cover object-center" src="https://cdn.artandobject.com/sites/default/files/styles/gallery_item/public/davincivitruvelucviatour-edited.jpg?itok=4Eu82Kyn" alt="">
       </div>
-      <main class="w-full flex flex-col md:flex-row xl:flex-col md:justify-center items-center gap-20 bg-gray-950 px-7 py-20">
-        <DesignerCardsRenderer/>
+      <main class="w-full flex justify-center bg-gray-950">
+         <div class="w-full max-w-screen-lg flex flex-col items-center xl:flex-col gap-10  py-10">
+            <DesignerCardsRenderer/>
+         </div>
       </main>
     </section>
 </Layout>
