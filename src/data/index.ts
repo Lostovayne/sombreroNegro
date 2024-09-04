@@ -34,3 +34,5 @@ export const designerData = {
     },
   },
 };
+
+export const contactPageData = {};

@@ -1,0 +1,28 @@
+---
+const { data } = Astro.props
+---
+
+<div class="w-full py-20 px-7 bg-gray-950 text-white">
+   <div class="w-full flex flex-col gap-8 max-w-screen-lg mx-auto">
+      <div>
+         <h2 class="text-xl font-medium">Texto titulo</h2>
+         <h3 class="text-base">pequena descripcion</h3>
+      </div>
+
+      <p class="text-base font-normal text-balance">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam consectetur placeat delectus, illo odio quaerat sequi? Quaerat dolor fugiat cum, officia earum, ex, asperiores neque quas a error sint.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam consectetur placeat delectus, illo odio quaerat sequi? Quaerat dolor fugiat cum, officia earum, ex, asperiores neque quas a error sint.</p>
+
+      <div>
+         <h3 class="text-xl font-normal mb-3">Sombrero Negro</h3>
+         <div class="flex flex-col sm:flex-row gap-1">
+            <span class="block">+56 9 5555 6666</span>
+            <span class="hidden sm:inline">&nbsp;/&nbsp;</span>
+            <span class="block">+56 9 5555 7777</span>
+         </div>
+         <div class="flex flex-col sm:flex-row gap-1">
+            <a class="text-sm min-[375px]:text-base" href="mailto:sombreronegro.contacto@gmail.com">sombreronegro.contacto@gmail.com</a>
+            <span class="hidden sm:inline">-</span>
+            <a class="text-sm min-[375px]:text-base" href="mailto:sombreronegro.contacto@gmail.com">segundocorreo@gmail.com</a>
+         </div>
+      </div>
+   </div>
+</div>
