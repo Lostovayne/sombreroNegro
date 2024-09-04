@@ -2,7 +2,7 @@
 import GalleryProjects from '@/components/GalleryProjects.astro';
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
-
+import SectionTitle from '@/components/SectionTitle.astro';
 
 const projects =  await getCollection('projects');
 const FirstGallery = projects.slice(0, 7)
@@ -11,7 +11,7 @@ const FirstGallery = projects.slice(0, 7)
 
 
 <Layout title="Proyectos">
-
+    <SectionTitle title="Galería de Proyectos" subtitle="titulo principal portadas"/>
     <!-- Renderizar un GalleryProject cada 7 proyectos -->
    <section>
     <GalleryProjects projects={FirstGallery} />

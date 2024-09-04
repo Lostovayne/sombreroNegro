@@ -14,16 +14,11 @@ const isActive = isHome || isOtherPages
 
 <a
   href={href}
-  class:list={[
-    className,
-    { "show": isActive },
-    "unset animated-link",
-  ]}
   {...props}
 >
   <slot />
   {isActive && (
-    <span class="block w-full h-0.5 bg-black mt-2 transition-all"></span>
+    <span class="block w-full h-0.5 bg-black sm:bg-white mt-1 transition-all"></span>
   )}
 </a>
 

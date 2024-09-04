@@ -1,5 +1,5 @@
 ---
-import HeaderLink from "@/components/HeaderLink.astro";
+import NavbarLink from "@/components/NavbarLink.astro";
 import {MenuMobile} from "@/constants";
 import menuOpen from "@/images/icons/menu-Open.svg";
 import menuClose from "@/images/icons/menu-Close.svg";
@@ -27,7 +27,7 @@ import menuClose from "@/images/icons/menu-Close.svg";
 
           {MenuMobile.map((item) =>
             <li>
-              <HeaderLink class="capitalize menu-link" href={item.url} >{item.name}</HeaderLink>
+              <NavbarLink class="capitalize menu-link" href={item.url} >{item.name}</NavbarLink>
             </li>)
           } 
         </ul>
