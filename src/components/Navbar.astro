@@ -1,9 +1,29 @@
 ---
-import { Menu } from "@/constants"
+import Logo from "@/images/logo/sombrero_1.svg"
+
+
 ---
 
-<nav class="w-full py-6 hidden  lg:block shadow-md bg-white" >
-  <ul class="flex items-center w-full justify-center gap-6  font-normal max-w-screen-2xl mx-auto ">
-    {Menu.map((item) => <li><a href={item.url} class="text-decoration-none uppercase text-sm" >{item.name}</a></li>)}
-  </ul>
+<nav class="bg-gray-950 text-white w-full shadow-lg   " >
+
+    <ul class="flex items-center justify-center text-lg font-normal w-full gap-x-20" >
+        <li>
+            <a href="/nosotros">Nosotros</a>
+        </li>
+        <li>
+          <a href="#">Servicios</a>
+        </li>
+        <li>
+          <a href="/">
+            <img src={Logo.src} alt="" class="size-40 text-current object-contain" >
+          </a>
+        </li>
+        <li>
+          <a href="/contactos">Contactos</a>
+        </li>
+        <li>
+            <a href="/proyectos">Proyectos</a>
+        </li>
+
+    </ul>
 </nav>

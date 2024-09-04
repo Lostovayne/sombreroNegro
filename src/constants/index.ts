@@ -27,8 +27,8 @@ export const MenuMobile = [
     url: "/",
   },
   {
-    name: "trabajos",
-    url: "/trabajos",
+    name: "Proyectos",
+    url: "/proyectos",
   },
   {
     name: "nosotros",
@@ -39,4 +39,8 @@ export const MenuMobile = [
     name: "contactos",
     url: "/contactos",
   },
+  {
+    name: "servicios",
+    url: "/servicios",
+  }
 ];

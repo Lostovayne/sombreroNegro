@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        capitana: ["'capitana', sans-serif"],
+        sans: ["Roboto", "sans-serif"],
       },
     },
   },
