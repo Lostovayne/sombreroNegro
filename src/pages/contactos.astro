@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import ContactImageSection from "@/components/ContactImageSection.astro";
 import ContactInfoSection from "@/components/ContactInfoSection.astro";
+import {contactPageData} from "@/data/index.ts";
 ---
 
 
@@ -11,9 +12,9 @@ import ContactInfoSection from "@/components/ContactInfoSection.astro";
         <SectionTitle title="Contactos" />
         <main class="mt-10 w-full flex flex-col gap-10">
             <!-- section 1 -->
-           <ContactImageSection/>
+           <ContactImageSection data={contactPageData.imageSection}/>
             <!-- section 2 -->
-           <ContactInfoSection/>
+           <ContactInfoSection data={contactPageData.infoSection}/>
         </main>
     </section>
 </Layout>
