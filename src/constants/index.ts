@@ -20,3 +20,27 @@ export const Menu = [
     url: "/proyectos",
   },
 ];
+
+export const MenuMobile = [
+  {
+    name: "home",
+    url: "/",
+  },
+  {
+    name: "Proyectos",
+    url: "/proyectos",
+  },
+  {
+    name: "nosotros",
+    url: "/nosotros",
+  },
+
+  {
+    name: "contactos",
+    url: "/contactos",
+  },
+  {
+    name: "servicios",
+    url: "/servicios",
+  }
+];

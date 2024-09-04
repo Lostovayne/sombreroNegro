@@ -27,9 +27,11 @@ const { title } = Astro.props;
 	<ViewTransitions />
 	</head>
 
-	<body>
+	<body class="max-md:h-screen  max-md:flex max-md:flex-col max-md:justify-between">
 		<NavbarMobile />
-		<Navbar />
+		<div class=" max-md:hidden" >
+			<Navbar />
+		</div>
 		<slot />
 		<Footer />
 	</body>
@@ -43,57 +45,59 @@ const { title } = Astro.props;
 }
 
 
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Light.ttf") format("truetype");
+	font-display: swap;
+	font-weight: 300;
+	font-style: normal;
+}
+
+
 
 @font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/407662/00000000000000007735f335/30/l?subset_id=2&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/407662/00000000000000007735f335/30/d?subset_id=2&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/407662/00000000000000007735f335/30/a?subset_id=2&fvd=n8&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+	font-family:"Roboto";
+	src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/7434ab/00000000000000007735f33a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/7434ab/00000000000000007735f33a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/7434ab/00000000000000007735f33a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
-font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
+	font-family:"Roboto";
+	src: url("/fonts/Roboto-Medium.ttf") format("truetype");
+	font-display: swap;
+	font-weight: 500;
+	font-style: normal;
 }
 
 @font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/c85018/00000000000000007735f33d/30/l?subset_id=2&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/c85018/00000000000000007735f33d/30/d?subset_id=2&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/c85018/00000000000000007735f33d/30/a?subset_id=2&fvd=n6&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:600;font-stretch:normal;
+	font-family:"Roboto";
+	src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
 }
 
-@font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/e63cba/00000000000000007735f339/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/e63cba/00000000000000007735f339/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/e63cba/00000000000000007735f339/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+@font-face { 
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Black.ttf") format("truetype");
+	font-display: swap;
+	font-weight: 900;
+	font-style: normal;
 }
 
-@font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/d5639b/00000000000000007735f338/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/d5639b/00000000000000007735f338/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/d5639b/00000000000000007735f338/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
-}
 
-@font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/b608f7/00000000000000007735f33e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/b608f7/00000000000000007735f33e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/b608f7/00000000000000007735f33e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
-font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
-}
-
-@font-face {
-font-family:"capitana";
-src:url("https://use.typekit.net/af/7c49b3/00000000000000007735f342/30/l?subset_id=2&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/7c49b3/00000000000000007735f342/30/d?subset_id=2&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/7c49b3/00000000000000007735f342/30/a?subset_id=2&fvd=n9&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
-}
 
 body {
-	font-family: 'capitana', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	background-color: #fff;
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: contain;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
+	
 }
 
 

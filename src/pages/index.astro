@@ -1,22 +1,20 @@
 ---
-import Gallery from '@/components/Gallery.astro';
+import GalleryProjects from '@/components/GalleryProjects.astro';
 import Header from '@/components/Header.astro';
-import Layout from '../layouts/Layout.astro';
 import Link from '@/components/Link.astro';
 import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
 
-// tomar la data dinamica de los proyectos
+
 // retornar solo 7 proyectos
 const projects = await getCollection('projects');
-
-
-
+const dataProject = projects.map(project => project ).slice(0, 7)
 ---
 
 <Layout title="Estudio de diseño | Sombrero Negro">
 	<Header />
 	<main class="flex flex-col items-center max-w-screen-2xl mx-auto lg:px-16" >
-		<Gallery projects={projects} />
+		<GalleryProjects projects={dataProject} />
 		<Link />
 	</main>
 </Layout>

@@ -1,28 +1,42 @@
 ---
+
 import { Image } from "astro:assets";
-import Slider1 from "@/images/slider/slider1.webp";
-import Slider2 from "@/images/slider/slider2.webp";
-import Slider3 from "@/images/slider/slider3.webp";
-import Slider4 from "@/images/slider/slider4.webp";
+import Slider1 from "@/images/slider/slider1.jpg";
+
 
 ---
 
-    
 <div class="content" >
     <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="10"
     centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-    <swiper-slide> 
-      <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
+    <swiper-slide class="relative" > 
+      <div class=" bg-black/25 absolute top-0 left-0 w-full h-full " ></div>
+        <!-- <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/> -->
+         <img src="https://placehold.co/1400x500" alt="">
+        <h2 class="text-white font-extrabold text-5xl max-w-4xl tracking-[0.11em] absolute z-50 text-balance">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sapiente consectetur </h2>
     </swiper-slide>
-    <swiper-slide>
-      <Image src={Slider2} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
-    </swiper-slide>
-    <swiper-slide>
-      <Image src={Slider3} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
-    </swiper-slide>
-    <swiper-slide>
-      <Image src={Slider4} alt={"slider1"} class={"w-full h-full object-cover object-top"}/>
-    </swiper-slide>
+
+    <swiper-slide class="relative" > 
+        <div class=" bg-black/25 absolute top-0 left-0 w-full h-full " ></div>
+          <!-- <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/> -->
+           <img src="https://placehold.co/1400x500" alt="">
+          <h2 class="text-white font-extrabold text-5xl max-w-4xl tracking-[0.11em] absolute z-50 text-balance">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sapiente consectetur </h2>
+      </swiper-slide>
+
+      <swiper-slide class="relative" > 
+        <div class=" bg-black/25 absolute top-0 left-0 w-full h-full " ></div>
+          <!-- <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/> -->
+           <img src="https://placehold.co/1400x500" alt="">
+          <h2 class="text-white font-extrabold text-5xl max-w-4xl tracking-[0.11em] absolute z-50 text-balance">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sapiente consectetur </h2>
+      </swiper-slide>
+
+      <swiper-slide class="relative" > 
+        <div class=" bg-black/25 absolute top-0 left-0 w-full h-full " ></div>
+          <!-- <Image src={Slider1} alt={"slider1"} class={"w-full h-full object-cover object-center"}/> -->
+           <img src="https://placehold.co/1400x500" alt="">
+          <h2 class="text-white font-extrabold text-5xl max-w-4xl tracking-[0.11em] absolute z-50 text-balance">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sapiente consectetur </h2>
+      </swiper-slide>
+
   </swiper-container>
 </div>
 
@@ -30,7 +44,7 @@ import Slider4 from "@/images/slider/slider4.webp";
 
   .content {
     position: relative;
-    height: 32rem;
+    height: 38rem;
 
   }
 
