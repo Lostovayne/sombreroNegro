@@ -30,7 +30,7 @@ const {data} = project
 
 <Layout title={data.title} >
     <SectionTitle title={data.title} subtitle="titulo principal portadas"/>
-    <section class="mx-auto max-w-screen-lg grid grid-cols-4 grid-rows-4 my-10 gap-6 max-h-[140vh]" >
+    <section class="max-md:px-1.5 px-7 lg:px-0 md:mx-auto max-w-screen-lg grid grid-cols-4 grid-rows-4 my-10 gap-6 max-h-[140vh]" >
         <div class="col-span-2 row-span-1" >
             <Image src={data.image} alt={data.title} 
             loading="lazy"
@@ -54,7 +54,7 @@ const {data} = project
             class="object-cover size-full" />
         </div>
 
-        <div class="col-span-2 row-span-2 " >
+        <div class="col-span-2 row-span-1 sm:row-span-2" >
             <Image src={data.image} alt={data.title} 
             loading="lazy"
             format="webp"
@@ -62,7 +62,7 @@ const {data} = project
             class="object-cover size-full" />
         </div>
 
-        <div class="col-span-2 row-span-1  " >
+        <div class="col-span-2 row-span-1" >
             <Image src={data.image} alt={data.title} 
             loading="lazy"
             format="webp"
@@ -70,7 +70,7 @@ const {data} = project
             class="object-cover size-full" />
         </div>
    
-        <div class="col-span-2 row-span-1 " >
+        <div class="col-span-4 sm:col-span-2 row-span-1" >
             <Image src={data.image} alt={data.title} 
             loading="lazy"
             format="webp"
