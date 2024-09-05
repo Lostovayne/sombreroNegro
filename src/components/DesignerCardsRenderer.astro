@@ -1,6 +1,6 @@
 ---
 import DesignerProfileCard from "@/components/DesignerProfileCard.astro";
-import {designerData} from "@/data/index"
+const {designerData} = Astro.props
 ---
 
  {Object.values(designerData.designTeams).map((team) => (
@@ -10,6 +10,7 @@ import {designerData} from "@/data/index"
               fullName={designer.fullName}
               description={designer.description}
               image={designer.image}
+              imageAlt={designer.imageAlt}
             />
           ))}
           <div class="w-80 md:w-2/3 min-[925px]:w-60 lg:flex-1">

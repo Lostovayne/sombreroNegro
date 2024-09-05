@@ -1,16 +1,24 @@
 ---
 import { Image } from "astro:assets"
-const { data: {image1, image2, image3, description1, description2} } = Astro.props
+const { data: 
+{image1,
+ image2,
+ image3,
+ description1, 
+ description2,
+ imageAlt1,
+ imageAlt2,
+ imageAlt3} } = Astro.props
 ---
  
  <div class="w-full flex flex-col gap-10 px-7 lg:px-0  max-w-screen-lg mx-auto">
       <section>
          <div class="w-full flex flex-col sm:flex-row gap-5">
             <div class="w-full sm:w-1/2">
-               <Image class="size-full object-cover min-h-44 max-h-80" src={image1} width={500} height={300}  alt="">
+               <Image class="size-full object-cover min-h-44 max-h-80" src={image1} width={500} height={300}  alt={imageAlt1}>
             </div>
             <div class="w-full sm:w-1/2">
-               <Image class="size-full object-cover min-h-44 max-h-80" src={image2} width={500} height={300}  alt="">
+               <Image class="size-full object-cover min-h-44 max-h-80" src={image2} width={500} height={300}  alt={imageAlt2}>
             </div>
          </div>
          <h4 class="text-base pt-2">{description1}</h4>   
@@ -18,7 +26,7 @@ const { data: {image1, image2, image3, description1, description2} } = Astro.pro
                          
       <div class="flex flex-col md:flex-row gap-5">
          <div class="w-full">
-            <Image class="w-full object-cover min-h-44 max-h-80" src={image3} width={520} height={220} alt="imagen"/>
+            <Image class="w-full object-cover min-h-44 max-h-80" src={image3} width={520} height={220} alt={imageAlt3}/>
          </div>
          <div class="w-full md:w-96">
             <p class="text-base text-balance">{description2}</p>

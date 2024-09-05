@@ -1,14 +1,21 @@
 export const designerData = {
+  sectionTitle: "Diseñadores del estudio",
+  sectionSubTitle: "titulo principal portadas",
+  image:
+    "https://cdn.artandobject.com/sites/default/files/styles/gallery_item/public/davincivitruvelucviatour-edited.jpg?itok=4Eu82Kyn",
+  imageAlt: "imagen de un dibujo de Davinci Vitruvius",
   designTeams: {
     teamOne: {
       designers: [
         {
           image: "https://via.placeholder.com/320x256",
+          imageAlt: "alt imagen",
           fullName: "Davinci Vitruvius",
           description: "Lorem ipsum dolor sit amet.",
         },
         {
           image: "https://via.placeholder.com/320x256",
+          imageAlt: "alt de imagen",
           fullName: "Leonardo Fibonacci",
           description: "Lorem ipsum dolor sit amet.",
         },
@@ -20,11 +27,13 @@ export const designerData = {
       designers: [
         {
           image: "https://via.placeholder.com/320x256",
+          imageAlt: "alt de imagen",
           fullName: "Michelangelo Buonarroti",
           description: "Lorem ipsum dolor sit amet.",
         },
         {
           image: "https://via.placeholder.com/320x256",
+          imageAlt: "alt de imagen",
           fullName: "Raphael Sanzio",
           description: "Lorem ipsum dolor sit amet.",
         },
@@ -36,10 +45,14 @@ export const designerData = {
 };
 
 export const contactPageData = {
+  sectionTitle: "Contactos",
   imageSection: {
     image1: "https://via.placeholder.com/500x300",
+    imageAlt1: "alt de imagen",
     image2: "https://via.placeholder.com/500x300",
+    imageAlt2: "alt de imagen",
     image3: "https://via.placeholder.com/500x300",
+    imageAlt3: "alt de imagen",
     description1:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sapiente consectetur",
     description2:
