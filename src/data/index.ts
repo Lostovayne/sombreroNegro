@@ -1,4 +1,22 @@
-export const designerData = {
+export interface DesignerInterface {
+  sectionTitle: string;
+  sectionSubTitle: string;
+  image: string;
+  imageAlt: string;
+  designTeams: {
+    [key: string]: {
+      designers: {
+        image: string;
+        imageAlt: string;
+        fullName: string;
+        description: string;
+      }[];
+      teamDescription: string;
+    };
+  };
+}
+
+export const designerData: DesignerInterface = {
   sectionTitle: "Diseñadores del estudio",
   sectionSubTitle: "titulo principal portadas",
   image:
