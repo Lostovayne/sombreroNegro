@@ -1,19 +1,28 @@
 ---
 import DesignerProfileCard from "@/components/DesignerProfileCard.astro";
-import {designerData} from "@/data/index"
+import type { DesignerInterface } from "@/data";
+
+interface Props {
+  designerData: DesignerInterface;
+}
+
+const { designerData } = Astro.props;
 ---
 
- {Object.values(designerData.designTeams).map((team) => (
-        <div class="w-full px-7 lg:px-0 flex flex-col items-center md:flex-row md:justify-between md:items-start md:flex-wrap min-[925px]:flex-nowrap xl:flex-row gap-x-5 gap-y-8">
-          {team.designers.map((designer) => (
-            <DesignerProfileCard
-              fullName={designer.fullName}
-              description={designer.description}
-              image={designer.image}
-            />
-          ))}
-          <div class="w-80 md:w-2/3 min-[925px]:w-60 lg:flex-1">
-            <p class="text-white text-balance">{team.teamDescription}</p>
-          </div>
-        </div>
+{
+  Object.values(designerData.designTeams).map((team) => (
+    <div class="w-full px-7 lg:px-0 flex flex-col items-center md:flex-row md:justify-between md:items-start md:flex-wrap min-[925px]:flex-nowrap xl:flex-row gap-x-5 gap-y-8">
+      {team.designers.map((designer) => (
+        <DesignerProfileCard
+          fullName={designer.fullName}
+          description={designer.description}
+          image={designer.image}
+          imageAlt={designer.imageAlt}
+        />
       ))}
+      <div class="w-80 md:w-2/3 min-[925px]:w-60 lg:flex-1">
+        <p class="text-white text-balance">{team.teamDescription}</p>
+      </div>
+    </div>
+  ))
+}

@@ -1,0 +1,28 @@
+---
+const { data: {title1, title2, description, paragraph, contact1, contact2, email1, email2} } = Astro.props
+---
+
+<div class="w-full py-20 px-7 bg-gray-950 text-white">
+   <div class="w-full flex flex-col gap-8 max-w-screen-lg mx-auto">
+      <div>
+         <h2 class="text-xl font-medium">{title1}</h2>
+         <h3 class="text-base">{description}</h3>
+      </div>
+
+      <p class="text-base font-normal text-balance">{paragraph}</p>
+
+      <div>
+         <h3 class="text-xl font-normal mb-3">{title2}</h3>
+         <div class="flex flex-col sm:flex-row gap-1">
+            <span class="block">{contact1}</span>
+            <span class="hidden sm:inline">&nbsp;/&nbsp;</span>
+            <span class="block">{contact2}</span>
+         </div>
+         <div class="flex flex-col sm:flex-row gap-1">
+            <a class="text-sm min-[375px]:text-base" href="mailto:sombreronegro.contacto@gmail.com">{email1}</a>
+            <span class="hidden sm:inline">-</span>
+            <a class="text-sm min-[375px]:text-base" href="mailto:sombreronegro.contacto@gmail.com">{email2}</a>
+         </div>
+      </div>
+   </div>
+</div>

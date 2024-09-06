@@ -5,7 +5,7 @@ import menuOpen from "@/images/icons/menu-Open.svg";
 import menuClose from "@/images/icons/menu-Close.svg";
 ---
 
- <nav class="bg-white flex justify-between py-5 px-7 md:hidden">
+<nav class="bg-white flex justify-between py-5 px-7 md:hidden">
    <a href="/">
       <h1 class="text-2xl">Logo</h1>
    </a>
@@ -15,7 +15,7 @@ import menuClose from "@/images/icons/menu-Close.svg";
 
     <section
       id="mobile-menu"
-     class="fixed top-0 left-0 -translate-x-full z-10 w-full h-full transition-all bg-black/40">
+     class="fixed top-0 left-0  z-10 w-full h-full transition-all bg-black/40">
       <div id="menu-links" class="flex flex-col bg-white w-[75%] h-full drop-shadow-2xl">
          <div class="flex justify-end px-7 py-5">
             <button id="mobile-menu-close">
@@ -36,29 +36,57 @@ import menuClose from "@/images/icons/menu-Close.svg";
 </nav>
 
 
+
+<!-- 
 <script>
   // @ts-nocheck
 
-  // abrir menu
-  document.querySelector("#mobile-menu-open").addEventListener("click", () => {
+  function setupMenuListeners() {
+    const openButton = document.querySelector("#mobile-menu-open");
+    const closeButton = document.querySelector("#mobile-menu-close");
+    const menu = document.querySelector("#mobile-menu");
+
+    if (openButton && closeButton && menu) {
+      // Limpiar event listeners previos
+      openButton.removeEventListener("click", openMenu);
+      closeButton.removeEventListener("click", closeMenu);
+      menu.removeEventListener("click", closeMenuOutside);
+
+      // abrir menu
+      openButton.addEventListener("click", openMenu);
+      
+      // cerrar menu
+      closeButton.addEventListener("click", closeMenu);
+
+      // cerrar menu si clickeas afuera
+      menu.addEventListener("click", closeMenuOutside);
+    }
+  }
+
+  function openMenu() {
     const menu = document.querySelector("#mobile-menu");
     menu.classList.remove("-translate-x-full");
     menu.classList.add("translate-x-0");
+  }
 
-  });
-  // cerrar menu
-  document.querySelector("#mobile-menu-close").addEventListener("click", () => {
+  function closeMenu() {
     const menu = document.querySelector("#mobile-menu");
     menu.classList.remove("translate-x-0");
     menu.classList.add("-translate-x-full");
-  });
-
-  // cerrar menu si clickeas afuera
-  document.querySelector("#mobile-menu").addEventListener("click", (e) => {
-  if (!e.target.closest("#menu-links")) {
-    document.querySelector("#mobile-menu").classList.remove("translate-x-0");
-    document.querySelector("#mobile-menu").classList.add("-translate-x-full");
   }
-});
-</script>
 
+  function closeMenuOutside(e) {
+    const menu = document.querySelector("#mobile-menu");
+    if (!e.target.closest("#menu-links")) {
+      closeMenu();
+    }
+  }
+
+  // Llama a la función al cargar el componente
+  document.addEventListener("DOMContentLoaded", setupMenuListeners);
+
+  // Observador de cambios en el DOM
+  const observer = new MutationObserver(setupMenuListeners);
+  observer.observe(document.body, { childList: true, subtree: true });
+</script>
+ -->
