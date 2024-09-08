@@ -26,13 +26,13 @@ export const designerData: DesignerInterface = {
     teamOne: {
       designers: [
         {
-          image: "https://via.placeholder.com/320x256",
+          image: "/src/images/common/Image-not-found.webp",
           imageAlt: "alt imagen",
           fullName: "Davinci Vitruvius",
           description: "Lorem ipsum dolor sit amet.",
         },
         {
-          image: "https://via.placeholder.com/320x256",
+          image: "/src/images/common/Image-not-found.webp",
           imageAlt: "alt de imagen",
           fullName: "Leonardo Fibonacci",
           description: "Lorem ipsum dolor sit amet.",
@@ -44,13 +44,13 @@ export const designerData: DesignerInterface = {
     teamTwo: {
       designers: [
         {
-          image: "https://via.placeholder.com/320x256",
+          image: "/src/images/common/Image-not-found.webp",
           imageAlt: "alt de imagen",
           fullName: "Michelangelo Buonarroti",
           description: "Lorem ipsum dolor sit amet.",
         },
         {
-          image: "https://via.placeholder.com/320x256",
+          image: "/src/images/common/Image-not-found.webp",
           imageAlt: "alt de imagen",
           fullName: "Raphael Sanzio",
           description: "Lorem ipsum dolor sit amet.",
@@ -65,11 +65,11 @@ export const designerData: DesignerInterface = {
 export const contactPageData = {
   sectionTitle: "Contactos",
   imageSection: {
-    image1: "https://via.placeholder.com/500x300",
+    image1: "/src/images/common/Image-not-found.webp",
     imageAlt1: "alt de imagen",
-    image2: "https://via.placeholder.com/500x300",
+    image2: "/src/images/common/Image-not-found.webp",
     imageAlt2: "alt de imagen",
-    image3: "https://via.placeholder.com/500x300",
+    image3: "/src/images/common/Image-not-found.webp",
     imageAlt3: "alt de imagen",
     description1:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sapiente consectetur",
