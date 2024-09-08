@@ -11,7 +11,7 @@ const { designerData } = Astro.props;
 
 {
   Object.values(designerData.designTeams).map((team) => (
-    <div class="w-full px-7 lg:px-0 flex flex-col items-center md:flex-row md:justify-between md:items-start md:flex-wrap min-[925px]:flex-nowrap xl:flex-row gap-x-5 gap-y-8">
+    <div class="w-full max-xl:px-7 flex flex-col items-center md:flex-row md:justify-between md:items-start md:flex-wrap min-[925px]:flex-nowrap xl:flex-row gap-x-5 gap-y-8">
       {team.designers.map((designer) => (
         <DesignerProfileCard
           fullName={designer.fullName}

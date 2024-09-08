@@ -1,11 +1,14 @@
 ---
-import Footer from '@/components/Footer.astro';
-import NavbarMobile from '@/components/Navbar-Mobile.astro';
-import Navbar from '@/components/Navbar.astro';
-import { ViewTransitions } from 'astro:transitions';
+import Footer from "@/components/Footer.astro";
+// import NavbarMobile from '@/components/Navbar-Mobile.astro';
+import { NavbarMobile } from "@/components/NavbarMobile";
+import Navbar from "@/components/Navbar.astro";
+import { ViewTransitions } from "astro:transitions";
+import NavbarLink from "@/components/NavbarLink.astro";
+import { MenuMobile } from "@/constants";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -13,93 +16,97 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Sobrero Negro, estudio de diseño " />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-		<link rel="stylesheet" href="https://use.typekit.net/otb6liq.css">
-		<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-	/>
-	<ViewTransitions />
-	</head>
-	<!-- max-md:h-screen  max-md:flex max-md:flex-col max-md:justify-between -->
-	<body class="">
-		<NavbarMobile />
-		<div class=" max-md:hidden" >
-			<Navbar />
-		</div>
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sobrero Negro, estudio de diseño " />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://use.typekit.net/otb6liq.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <ViewTransitions />
+  </head>
+  <!-- max-md:h-screen  max-md:flex max-md:flex-col max-md:justify-between -->
+  <body class="">
+    <!-- <NavbarMobile /> -->
+    <NavbarMobile client:load>
+      <>
+        {
+          MenuMobile.map((item) => (
+            <li>
+              <NavbarLink class="capitalize menu-link" href={item.url}>
+                {item.name}
+              </NavbarLink>
+            </li>
+          ))
+        }
+      </>
+    </NavbarMobile>
+
+    <div class="max-md:hidden">
+      <Navbar />
+    </div>
+    <slot />
+    <Footer />
+  </body>
 </html>
 <style is:global>
+  :root {
+    --gray-light: 229, 233, 240;
+    --gray-dark: 34, 41, 57;
+    --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  }
 
-:root {
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-}
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Light.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 300;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-@font-face {
-	font-family: "Roboto";
-	src: url("/fonts/Roboto-Light.ttf") format("truetype");
-	font-display: swap;
-	font-weight: 300;
-	font-style: normal;
-}
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Medium.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Black.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal;
+  }
 
-@font-face {
-	font-family:"Roboto";
-	src: url("/fonts/Roboto-Regular.ttf") format("truetype");
-	font-display: swap;
-	font-weight: 400;
-	font-style: normal;
-}
-
-@font-face {
-	font-family:"Roboto";
-	src: url("/fonts/Roboto-Medium.ttf") format("truetype");
-	font-display: swap;
-	font-weight: 500;
-	font-style: normal;
-}
-
-@font-face {
-	font-family:"Roboto";
-	src: url("/fonts/Roboto-Bold.ttf") format("truetype");
-	font-display: swap;
-	font-weight: 700;
-	font-style: normal;
-}
-
-@font-face { 
-	font-family: "Roboto";
-	src: url("/fonts/Roboto-Black.ttf") format("truetype");
-	font-display: swap;
-	font-weight: 900;
-	font-style: normal;
-}
-
-
-
-body {
-	font-family: 'Roboto', sans-serif;
-	background-color: #fff;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: contain;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	
-}
-
-
-
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    background-size: contain;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: rgb(var(--gray-dark));
+  }
 </style>
