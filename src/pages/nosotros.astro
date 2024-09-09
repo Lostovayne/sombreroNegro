@@ -6,21 +6,22 @@ import { Image } from "astro:assets";
 import { designerData } from "@/data";
 ---
 
-
-<Layout title="Nosotros" >
-   <section class="mx-auto max-w-screen-2xl" >
-      <SectionTitle title={designerData.sectionTitle} subtitle={designerData.sectionSubTitle}/>
-      <div class="mt-10 w-full h-72">
-         <Image class="size-full object-cover object-center" 
-            src={designerData.image}
-            alt={designerData.imageAlt}
-            width={1536} 
-            height={288}/>
+<Layout title="Nosotros">
+  <section class="mx-auto max-w-screen-xl">
+    <SectionTitle title={designerData.sectionTitle} subtitle={designerData.sectionSubTitle} />
+    <div class="mt-10 w-full h-72">
+      <Image
+        class="size-full object-cover object-center"
+        src={designerData.image}
+        alt={designerData.imageAlt}
+        width={1536}
+        height={288}
+      />
+    </div>
+    <main class="w-full flex justify-center bg-gray-950">
+      <div class="w-full max-w-screen-lg flex flex-col items-center xl:flex-col gap-10 py-10">
+        <DesignerCardsRenderer designerData={designerData} />
       </div>
-      <main class="w-full flex justify-center bg-gray-950">
-         <div class="w-full max-w-screen-lg flex flex-col items-center xl:flex-col gap-10  py-10">
-            <DesignerCardsRenderer designerData={designerData}/>
-         </div>
-      </main>
-    </section>
+    </main>
+  </section>
 </Layout>
