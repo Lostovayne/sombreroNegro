@@ -88,3 +88,74 @@ export const contactPageData = {
     email2: "segundocorreo@gmail.com",
   },
 };
+
+export interface ServiceCardInterface {
+  bgColor: string;
+  image: string;
+  imageAlt: string;
+  buttonText: string;
+  biggerCard?: boolean;
+}
+export interface ServiceDataInterface {
+  sectionTitle: string;
+  cards: {
+    [key: string]: ServiceCardInterface;
+  };
+}
+export const servicePageData: ServiceDataInterface = {
+  sectionTitle: "Servicios",
+  cards: {
+    card1: {
+      bgColor: "bg-gray-200",
+      image: "/images/services/servicio1.png",
+      imageAlt: "alt de imagen",
+      buttonText: "isologotipo",
+      biggerCard: true,
+    },
+    card2: {
+      bgColor: "bg-red-500",
+      image: "/images/services/servicio2.png",
+      imageAlt: "alt de imagen",
+      buttonText: "papeleria",
+    },
+    card3: {
+      bgColor: "bg-green-500",
+      image: "/images/services/servicio3.png",
+      imageAlt: "alt de imagen",
+      buttonText: "folletos",
+    },
+    card4: {
+      bgColor: "bg-yellow-500",
+      image: "/images/services/servicio4.png",
+      imageAlt: "alt de imagen",
+      buttonText: "catalogos",
+      biggerCard: true,
+    },
+    card5: {
+      bgColor: "bg-purple-500",
+      image: "/images/services/servicio5.png",
+      imageAlt: "alt de imagen",
+      buttonText: "editorial",
+      biggerCard: true,
+    },
+    card6: {
+      bgColor: "bg-pink-500",
+      image: "/images/services/servicio6.png",
+      imageAlt: "alt de imagen",
+      buttonText: "packaging",
+    },
+    card7: {
+      bgColor: "bg-indigo-500",
+      image: "/images/services/servicio7.png",
+      imageAlt: "alt de imagen",
+      buttonText: "publicitario",
+    },
+    card8: {
+      bgColor: "bg-orange-500",
+      image: "/images/services/servicio8.png",
+      imageAlt: "alt de imagen",
+      buttonText: "redes sociales",
+      biggerCard: true,
+    },
+  },
+};

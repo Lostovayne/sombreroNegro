@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import { servicePageData } from "@/data";
+import ServiceCard from "@/components/serviceCard.astro";
+---
+
+<Layout title="Servicios">
+  <SectionTitle title="Servicios" />
+  <section class="w-full max-w-screen-lg mx-auto">
+    <div class="w-full columns-[208px] max-xl:px-7 mb-10">
+      {Object.entries(servicePageData.cards).map(([key, card]) => <ServiceCard card={card} />)}
+    </div>
+  </section>
+</Layout>
