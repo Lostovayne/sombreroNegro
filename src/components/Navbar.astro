@@ -4,9 +4,8 @@ import LogoNoName from "@/images/logo/sombrero_2.svg";
 import NavbarLink from "./NavbarLink.astro";
 ---
 
-<nav
-  class="bg-transparent text-black w-full md:px-7 lg:px-0 border-b-2 border-gray-500 max-w-screen-xl mx-auto">
-  <ul class="flex items-end justify-center text-lg font-normal w-full gap-x-20 pb-7 pt-5">
+<nav class="text-black relative bg-white w-full md:px-7 lg:px-0 max-w-screen-xl mx-auto">
+  <ul class="flex items-end justify-center text-lg font-normal w-full gap-x-14 pb-7 pt-5">
     <li>
       <NavbarLink href="/nosotros">Nosotros</NavbarLink>
     </li>
@@ -19,10 +18,16 @@ import NavbarLink from "./NavbarLink.astro";
           src={LogoNoName.src}
           alt=""
           class="w-10 h-20 text-current object-contain object-bottom"
+          height="80"
         />
       </a>
       <a href="/" class="hidden min-[800px]:block">
-        <img src={Logo.src} alt="" class="w-40 text-current object-contain object-bottom" />
+        <img
+          src={Logo.src}
+          alt=""
+          class="w-40 text-current object-contain object-bottom"
+          height="80"
+        />
       </a>
     </li>
     <li>
@@ -33,3 +38,27 @@ import NavbarLink from "./NavbarLink.astro";
     </li>
   </ul>
 </nav>
+
+<style>
+  nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -9%;
+    width: 10%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+    z-index: 1;
+  }
+
+  nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -9%;
+    width: 10%;
+    height: 100%;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    z-index: 1;
+  }
+</style>

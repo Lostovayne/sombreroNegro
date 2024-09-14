@@ -15,4 +15,12 @@ const isActive = isHome || isOtherPages;
 <a href={href} {...props} class="capitalize">
   <slot />
   {isActive && <span class="block w-full h-0.5 bg-gray-950 md:bg-gray-400 mt-1" />}
+  <!-- {
+    isActive && (
+      <img
+        src="/images/brushstroke.svg"
+        class="absolute left-0 -top-3 lg:-top-8 -z-10 drop-shadow-sm"
+      />
+    )
+  } -->
 </a>
