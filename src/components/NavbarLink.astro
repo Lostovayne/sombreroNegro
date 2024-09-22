@@ -12,7 +12,11 @@ const isOtherPages =
 const isActive = isHome || isOtherPages;
 ---
 
-<a href={href} {...props} class="capitalize">
+<a
+  href={href}
+  {...props}
+  class:list={["uppercase font-normal transition-all", isActive && "text-gray-950 font-semibold"]}
+>
   <slot />
   {isActive && <span class="block w-full h-0.5 bg-gray-950 md:bg-gray-400 mt-1" />}
   <!-- {
